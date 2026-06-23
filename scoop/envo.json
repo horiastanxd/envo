@@ -6,7 +6,7 @@
   "architecture": {
     "64bit": {
       "url": "https://github.com/horiastanxd/envo/releases/download/v0.1.0/envo-x86_64-pc-windows-msvc.zip",
-      "hash": "",
+      "hash": "bd470fa9fda7c86e19e78574c5b7fb89ab06297b1ba9cdf0b7c016fa1ab63371",
       "bin": "envo.exe"
     }
   },
