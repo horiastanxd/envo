@@ -1,0 +1,51 @@
+{
+  "name": "@horiastanxd/envo",
+  "version": "0.1.0",
+  "description": "Typed .env manager: schema with types, profile inheritance, secret-leak detection, and encryption at rest.",
+  "keywords": [
+    "dotenv",
+    "env",
+    "environment",
+    "secrets",
+    "encryption",
+    "secret-scanning",
+    "cli",
+    "config",
+    "pre-commit"
+  ],
+  "homepage": "https://github.com/horiastanxd/envo#readme",
+  "bugs": {
+    "url": "https://github.com/horiastanxd/envo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/horiastanxd/envo.git"
+  },
+  "license": "MIT",
+  "author": "horiastanxd",
+  "bin": {
+    "envo": "bin/cli.js"
+  },
+  "scripts": {
+    "postinstall": "node bin/install.js"
+  },
+  "files": [
+    "bin/cli.js",
+    "bin/install.js"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "os": [
+    "linux",
+    "darwin",
+    "win32"
+  ],
+  "cpu": [
+    "x64",
+    "arm64"
+  ]
+}

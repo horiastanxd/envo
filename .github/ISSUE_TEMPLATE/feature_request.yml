@@ -1,0 +1,18 @@
+name: Feature request
+description: A new type, a leak-detection pattern, an output format, or an idea.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: The idea
+      description: What should envo do that it doesn't yet?
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why
+      description: The problem it solves. Links to a format or tool welcome.
+    validations:
+      required: false

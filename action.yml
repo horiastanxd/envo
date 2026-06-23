@@ -1,0 +1,39 @@
+name: "envo - env validation & secret scan"
+description: "Validate typed .env schemas and fail CI on leaked secrets. Uses .envo."
+author: "horiastanxd"
+
+branding:
+  icon: "lock"
+  color: "green"
+
+inputs:
+  args:
+    description: "Arguments passed to envo (default: scan)."
+    required: false
+    default: "scan"
+  version:
+    description: "envo release to use (binary release tag)."
+    required: false
+    default: "v0.1.0"
+  working-directory:
+    description: "Directory to run envo in."
+    required: false
+    default: "."
+
+runs:
+  using: "composite"
+  steps:
+    - name: Install envo
+      shell: bash
+      env:
+        ENVO_TAG: ${{ inputs.version }}
+      run: |
+        curl -fsSL "https://raw.githubusercontent.com/horiastanxd/envo/${ENVO_TAG}/install.sh" \
+          | ENVO_VERSION="${ENVO_TAG}" ENVO_BIN_DIR="${HOME}/.local/bin" sh
+        echo "${HOME}/.local/bin" >> "${GITHUB_PATH}"
+    - name: Run envo
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      env:
+        ENVO_ARGS: ${{ inputs.args }}
+      run: envo ${ENVO_ARGS}

@@ -1,0 +1,13 @@
+- id: envo-scan
+  name: envo (no leaked secrets)
+  description: Fail the commit if secrets are detected in staged files.
+  entry: envo scan --staged
+  language: rust
+  pass_filenames: false
+- id: envo-check
+  name: envo (valid environment)
+  description: Validate the resolved environment against the .envo schema.
+  entry: envo check
+  language: rust
+  pass_filenames: false
+  stages: [pre-commit]

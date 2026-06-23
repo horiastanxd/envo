@@ -1,0 +1,21 @@
+{
+  "version": "0.1.0",
+  "description": "Typed .env manager: schema, profiles, secret-leak detection, encryption.",
+  "homepage": "https://github.com/horiastanxd/envo",
+  "license": "MIT",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/horiastanxd/envo/releases/download/v0.1.0/envo-x86_64-pc-windows-msvc.zip",
+      "hash": "",
+      "bin": "envo.exe"
+    }
+  },
+  "checkver": "github",
+  "autoupdate": {
+    "architecture": {
+      "64bit": {
+        "url": "https://github.com/horiastanxd/envo/releases/download/v$version/envo-x86_64-pc-windows-msvc.zip"
+      }
+    }
+  }
+}

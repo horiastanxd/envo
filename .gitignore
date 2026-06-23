@@ -1,0 +1,7 @@
+/target
+
+# envo's own dogfooding (never commit real secrets/keys)
+.env
+.env.local
+*.secrets
+.envo.key
